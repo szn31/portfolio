@@ -1,0 +1,497 @@
+/* =========================================================
+   Sujan Shrestha - Personal Portfolio
+   External CSS Stylesheet
+   ========================================================= */
+
+
+/* ---------- CSS Variables ---------- */
+
+:root {
+    --primary-color: #1b2430;
+    --secondary-color: #243447;
+    --accent-color: #1c8a9c;
+    --accent-light: #e8f6f8;
+    --background-color: #f5f7fa;
+    --card-color: #ffffff;
+    --text-color: #333333;
+    --muted-text: #667085;
+    --border-color: #d9e0e7;
+    --white: #ffffff;
+    --shadow: 0 8px 25px rgba(27, 36, 48, 0.08);
+    --radius: 12px;
+}
+
+
+/* ---------- General Reset ---------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+
+/* ---------- Header ---------- */
+
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+
+header h1 {
+    max-width: 1100px;
+    margin: 0 auto 1.25rem;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+}
+
+
+/* ---------- Navigation ---------- */
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+}
+
+
+nav a {
+    display: block;
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.65rem 1rem;
+    border-radius: 7px;
+    font-weight: 600;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+nav a:hover,
+nav a:focus {
+    background-color: var(--accent-color);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+
+/* ---------- Main Content ---------- */
+
+main {
+    width: min(1100px, 92%);
+    margin: 2.5rem auto;
+}
+
+
+/* ---------- Sections ---------- */
+
+section {
+    background-color: var(--card-color);
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+
+section h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 3px solid var(--accent-color);
+}
+
+
+section p {
+    margin-bottom: 1rem;
+}
+
+
+/* ---------- About Section ---------- */
+
+#about {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+
+#about h2 {
+    grid-column: 1 / -1;
+}
+
+
+#about img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--accent-light);
+    box-shadow: 0 5px 18px rgba(27, 36, 48, 0.15);
+}
+
+
+#about p {
+    margin: 0;
+    color: var(--muted-text);
+}
+
+
+/* ---------- Skills Section ---------- */
+
+#skills dl {
+    display: grid;
+    grid-template-columns: minmax(130px, 0.35fr) 1fr;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+
+#skills dt,
+#skills dd {
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+
+#skills dt {
+    background-color: var(--accent-light);
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+
+#skills dd {
+    color: var(--muted-text);
+}
+
+
+/* ---------- Projects Section ---------- */
+
+#projects {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+
+#projects h2 {
+    grid-column: 1 / -1;
+}
+
+
+#projects article {
+    padding: 1.5rem;
+    background-color: #f9fbfc;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+#projects article:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: var(--shadow);
+}
+
+
+#projects h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+
+#projects article p {
+    color: var(--muted-text);
+}
+
+
+#projects article a {
+    display: inline-block;
+    color: var(--accent-color);
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 0.25rem;
+}
+
+
+#projects article a:hover,
+#projects article a:focus {
+    text-decoration: underline;
+}
+
+
+/* ---------- Contact Section ---------- */
+
+#contact form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+
+#contact form p {
+    margin-bottom: 1.25rem;
+}
+
+
+#contact label {
+    display: inline-block;
+    margin-bottom: 0.4rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 0.8rem 0.9rem;
+    font: inherit;
+    color: var(--text-color);
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 7px;
+    outline: none;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+#contact input:focus,
+#contact textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(28, 138, 156, 0.12);
+}
+
+
+#contact textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+
+#contact button {
+    border: none;
+    padding: 0.8rem 1.5rem;
+    color: var(--white);
+    background-color: var(--accent-color);
+    border-radius: 7px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+#contact button:hover,
+#contact button:focus {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+
+/* ---------- Footer ---------- */
+
+footer {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--white);
+    background-color: var(--primary-color);
+}
+
+
+footer p {
+    margin: 0;
+}
+
+
+/* =========================================================
+   Responsive Design
+   ========================================================= */
+
+
+/* ---------- Tablet ---------- */
+
+@media screen and (max-width: 768px) {
+
+    header {
+        padding: 1.75rem 1rem;
+    }
+
+
+    main {
+        width: min(94%, 680px);
+        margin: 2rem auto;
+    }
+
+
+    section {
+        padding: 1.5rem;
+    }
+
+
+    #about {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+
+    #about h2 {
+        text-align: left;
+    }
+
+
+    #about img {
+        margin: 0 auto;
+    }
+
+
+    #projects {
+        grid-template-columns: 1fr;
+    }
+
+
+    #projects h2 {
+        grid-column: auto;
+    }
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media screen and (max-width: 600px) {
+
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+
+    nav li {
+        width: 100%;
+    }
+
+
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    main {
+        width: 94%;
+        margin: 1.25rem auto;
+    }
+
+
+    section {
+        padding: 1.2rem;
+        margin-bottom: 1.25rem;
+    }
+
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+
+    #skills dl {
+        display: block;
+    }
+
+
+    #skills dt,
+    #skills dd {
+        display: block;
+    }
+
+
+    #skills dt {
+        border-bottom: none;
+        padding-bottom: 0.35rem;
+    }
+
+
+    #skills dd {
+        padding-top: 0.35rem;
+        padding-bottom: 1rem;
+    }
+
+
+    #about img {
+        width: 130px;
+        height: 130px;
+    }
+
+
+    #contact input,
+    #contact textarea {
+        font-size: 16px;
+    }
+
+
+    #contact button {
+        width: 100%;
+    }
+}
+
+
+/* ---------- Reduced Motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+}
